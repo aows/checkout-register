@@ -19,7 +19,7 @@ public class Main
 
       // create a new cart and add items to it
       Cart cart = new Cart();
-      cart.addOffer( new OfferXforY( Catalog.searchItem( "000001" ), 3, 5 ) );
+      cart.addOffer( new OfferXforY( Catalog.searchItem( "B" ), 3, 5 ) );
       initCartFromFile( cart );
 
       System.out.println( "Total price: " + cart.calculatePrice() );
@@ -35,7 +35,10 @@ public class Main
          br = new BufferedReader( new FileReader( "input.csv" ) );
          while( ( line = br.readLine() ) != null )
          {
-            cart.addItem( Catalog.searchItem( line ) );
+            for( char productCode : line.toCharArray() )
+            {
+               cart.addItem( Catalog.searchItem( String.valueOf( productCode ) ) );
+            }
          }
       }
       catch( FileNotFoundException e )

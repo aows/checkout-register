@@ -3,6 +3,7 @@
 # idea folders and files
 .idea/
 checkout-register.iml
+out/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
