@@ -5,10 +5,10 @@ public class Main
 
    public static void main ( String[] args )
    {
-      Catalog.getCatalog()
-         .addItem( "000001", new Item( "Cereal", 3.5 ) )
-         .addItem( "000002", new Item( "Meat", 10 ) );
+      // initialize catalog
+      Catalog.initFromFile( "catalog.csv" );
 
+      // create a new cart and add items to it
       Cart cart = new Cart();
       cart.addItem( Catalog.searchItem( "000001" ) );
       cart.addItem( Catalog.searchItem( "000001" ) );
