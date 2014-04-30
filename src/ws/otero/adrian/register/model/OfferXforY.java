@@ -8,10 +8,11 @@ public class OfferXforY
 
    public OfferXforY (
       Item product,
+      String description,
       int youPay,
       int youGet )
    {
-      super( product );
+      super( product, description );
       this.youPay = youPay;
       this.youGet = youGet;
    }
@@ -28,5 +29,10 @@ public class OfferXforY
       }
 
       return ( numOfProducts / this.youGet ) * ( this.youGet - this.youPay ) * this.product.getPrice();
+   }
+
+   public String explainOffer ( Cart cart )
+   {
+      return this.description;
    }
 }

@@ -17,12 +17,13 @@ public class Main
       // initialize catalog
       Catalog.initFromFile( "catalog.csv" );
 
-      // create a new cart and add items to it
+      // create a new cart and add items and offers to it
       Cart cart = new Cart();
-      cart.addOffer( new OfferXforY( Catalog.searchItem( "B" ), 3, 5 ) );
+      cart.addOffer( new OfferXforY( Catalog.searchItem( "B" ), "Get 5 for 3", 3, 5 ) );
       initCartFromFile( cart );
 
       System.out.println( "Total price: " + cart.calculatePrice() );
+      System.out.println( cart.explainCart() );
    }
 
    private static void initCartFromFile ( Cart cart )

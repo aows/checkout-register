@@ -10,13 +10,19 @@ public class OfferPercentageDiscount
 
    public OfferPercentageDiscount (
       Item product,
+      String description,
       int percentage )
    {
-      super( product );
+      super( product, description );
       this.percentage = percentage;
    }
 
    public double calculateDiscount ( Cart cart )
+   {
+      throw new NotImplementedException();
+   }
+
+   public String explainOffer ( Cart cart )
    {
       throw new NotImplementedException();
    }
