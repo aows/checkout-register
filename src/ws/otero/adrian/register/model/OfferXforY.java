@@ -1,5 +1,11 @@
 package ws.otero.adrian.register.model;
 
+/**
+ * Example of one offer. With this offer the customer can get an amount of products paying only for some of them.
+ * An example would be something like "Get 5 and pay 3".
+ *
+ * @author Adrian Otero
+ */
 public class OfferXforY
    extends Offer
 {
@@ -31,8 +37,4 @@ public class OfferXforY
       return ( numOfProducts / this.youGet ) * ( this.youGet - this.youPay ) * this.product.getPrice();
    }
 
-   public String explainOffer ( Cart cart )
-   {
-      return this.description;
-   }
 }

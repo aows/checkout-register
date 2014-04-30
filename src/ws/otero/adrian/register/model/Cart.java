@@ -3,26 +3,50 @@ package ws.otero.adrian.register.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class implements features for a basic shopping cart.
+ *
+ * You can add items and offers, then calculate the final price and get a ticket with all the results.
+ *
+ * @author Adrian Otero
+ */
 public class Cart
 {
    private List<Item> items = new ArrayList<Item>();
    private List<Offer> offers = new ArrayList<Offer>();
 
+   /**
+    * @param item item to be added to the cart
+    * @see Item
+    */
    public void addItem ( Item item )
    {
       items.add( item );
    }
 
+   /**
+    * @return current items added to the cart
+    * @see Item
+    */
    public List<Item> getItems ()
    {
       return items;
    }
 
+   /**
+    * @param offer offer to apply to the items
+    * @see Offer
+    */
    public void addOffer ( Offer offer )
    {
       offers.add( offer );
    }
 
+   /**
+    * Calculates the final price of the current items and offers
+    *
+    * @return final price
+    */
    public double calculatePrice ()
    {
       double finalPrice = 0;
@@ -38,12 +62,20 @@ public class Cart
       return finalPrice;
    }
 
+   /**
+    * Generates a ticket
+    *
+    * @return the final result in a ticket-life format
+    */
    public String explainCart ()
    {
       double price = 0, discount;
       StringBuilder sb = new StringBuilder();
+
       for( Item item : items )
       {
+         // we could build this line using "+" or like here, using multiple appends.
+         // the java compiler would convert the former to append calls
          sb.append( item.getCode() )
             .append( " - " )
             .append( item.getName() )
@@ -75,6 +107,7 @@ public class Cart
          .append( "\r\n" );
       sb.append( "----------------\r\n\r\n" )
          .append( "THANKS FOR YOUR VISIT" );
+
       return sb.toString();
    }
 }

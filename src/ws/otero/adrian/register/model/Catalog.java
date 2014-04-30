@@ -7,39 +7,51 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This class stores the current catalog of products. Everything is static so we'll have just one catalog.
+ *
+ * @author Adrian Otero
+ */
 public class Catalog
 {
-
-   private static Catalog instance;
 
    private Catalog ()
    {
    }
 
-   public static Catalog getCatalog ()
-   {
-      if( instance == null )
-      {
-         instance = new Catalog();
-      }
-      return instance;
-   }
-
    private static Map<String, Item> items = new HashMap<String, Item>();
 
-   public static Catalog addItem (
+   /**
+    * Adds one item to the catalog
+    *
+    * @param code this will be used to retrieve the product later calling {@link #searchItem(String)}
+    * @param item item to add to the catalog
+    * @see Item
+    */
+   public static void addItem (
       String code,
       Item item )
    {
       items.put( code, item );
-      return instance;
    }
 
+   /**
+    * Looks for a product with the given code
+    *
+    * @param code code of the product we are looking for
+    * @return the item as it is in the catalog
+    * @see Item
+    */
    public static Item searchItem ( String code )
    {
       return items.get( code );
    }
 
+   /**
+    * Initializes the catalog from a file
+    *
+    * @param csvFile
+    */
    public static void initFromFile ( String csvFile )
    {
       BufferedReader br = null;

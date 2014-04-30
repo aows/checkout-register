@@ -22,9 +22,4 @@ public class OfferPercentageDiscount
       throw new NotImplementedException();
    }
 
-   public String explainOffer ( Cart cart )
-   {
-      throw new NotImplementedException();
-   }
-
 }
