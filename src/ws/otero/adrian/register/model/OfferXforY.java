@@ -26,7 +26,6 @@ public class OfferXforY
             numOfProducts++;
          }
       }
-      System.out.println( numOfProducts );
 
       return ( numOfProducts / this.youGet ) * ( this.youGet - this.youPay ) * this.product.getPrice();
    }

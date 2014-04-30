@@ -1,5 +1,9 @@
 *.class
 
+# idea folders and files
+.idea/
+checkout-register.iml
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
