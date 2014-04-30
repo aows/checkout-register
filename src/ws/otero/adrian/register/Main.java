@@ -22,7 +22,6 @@ public class Main
       cart.addOffer( new OfferXforY( Catalog.searchItem( "B" ), "Get 5 for 3", 3, 5 ) );
       initCartFromFile( cart );
 
-      System.out.println( "Total price: " + cart.calculatePrice() );
       System.out.println( cart.explainCart() );
    }
 
