@@ -19,9 +19,10 @@ public class Cart
     * @param item item to be added to the cart
     * @see Item
     */
-   public void addItem ( Item item )
+   public Cart addItem ( Item item )
    {
       items.add( item );
+      return this;
    }
 
    /**
